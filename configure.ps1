@@ -15,15 +15,16 @@ $idrisLibs = $rootPath + "\idris2\bootstrap\idris2-0.2.0\lib"
 $idrisPrefix = $rootPath + "\idris2\bootstrap"
 # IDRIS2_PATH
 $idrisAppPath = $idrisPath + "\bin\idris2_app"
-$schemePath = $rootPath + "\chez\bin\ta6nt\scheme.exe" 
+$schemePath = $rootPath + "\chez\bin\ta6nt"
 
 [void]$configBuilder.AppendLine("@echo off")
 [void]$configBuilder.AppendLine("set PATH=$idrisAppPath;%PATH%")
+[void]$configBuilder.AppendLine("set PATH=$schemePath;%PATH%")
 [void]$configBuilder.AppendLine("set IDRIS2_PATH=$idrisPath")
 [void]$configBuilder.AppendLine("set IDRIS2_PREFIX=$idrisPrefix")
 [void]$configBuilder.AppendLine("set IDRIS2_LIBS=$idrisLibs")
 [void]$configBuilder.AppendLine("set IDRIS2_DATA=$idrisData")
-[void]$configBuilder.AppendLine("`"$schemePath`" --script `"$($idrisAppPath + '\idris2.so')`" %*")
+[void]$configBuilder.AppendLine("`"$schemePath/scheme.exe`" --script `"$($idrisAppPath + '\idris2.so')`" %*")
 
 $outFile = $idrisPath + "\bin\idris2.cmd"
 
