@@ -56,7 +56,7 @@ jobs:
         run: |
           New-Item -ItemType directory -Name output/idris2-windows-nightly/chez
           New-Item -ItemType directory -Name output/idris2-windows-nightly/idris2
-          Move-Item -Path configure.ps1" -Destination output/idris2-windows-nightly
+          Move-Item -Path configure.ps1 -Destination output/idris2-windows-nightly
           Move-Item -Path ChezScheme/ta6nt/bin output/idris2-windows-nightly/chez
           Move-Item -Path ChezScheme/ta6nt/boot output/idris2-windows-nightly/chez
           Move-Item -Path Idris2/.idris2 output/idris2-windows-nightly/idris2
