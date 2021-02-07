@@ -18,6 +18,7 @@ env:
   MSYS2_PATH_TYPE: inherit
   SCHEME: scheme
   CC: gcc
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 
 jobs:
   build:
