@@ -8,9 +8,9 @@ $rootPath = $pwd.Path
 # PATH
 $idrisPath = $rootPath + "\idris2\.idris2"
 # IDRIS2_DATA
-$idrisData = $rootPath + "\idris2\bootstrap\idris2-0.2.0\support"
+$idrisData = $rootPath + "\idris2\bootstrap\idris2-0.3.0\support"
 # IDRIS2_LIBS
-$idrisLibs = $rootPath + "\idris2\bootstrap\idris2-0.2.0\lib"
+$idrisLibs = $rootPath + "\idris2\bootstrap\idris2-0.3.0\lib"
 # IDRIS2_PREFIX
 $idrisPrefix = $rootPath + "\idris2\bootstrap"
 # IDRIS2_PATH
