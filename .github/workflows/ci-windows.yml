@@ -34,7 +34,7 @@ jobs:
         run: |
           git clone --depth 1 https://github.com/cisco/ChezScheme
           c:\msys64\usr\bin\bash -l -c "pacman -S --noconfirm tar make zip"
-          echo "PWD=$(c:\msys64\usr\bin\cygpath -u $(pwd))" >> $GITHUB_ENV
+          echo "::set-env name=PWD::$(c:\msys64\usr\bin\cygpath -u $(pwd))"
       - name: Configure and Build Chez Scheme
         run: |
           c:\msys64\usr\bin\bash -l -c "cd $env:PWD && cd ChezScheme && ./configure --threads && make"
@@ -43,10 +43,10 @@ jobs:
           $chez="$(pwd)\ChezScheme\ta6nt\bin\ta6nt"
           $idris="$(pwd)\Idris2\.idris2"
           $output="$(pwd)\output"
-          echo "$chez" >> $GITHUB_PATH
-          echo "$idris\bin" >> $GITHUB_PATH
-          echo "IDRIS_PREFIX=$idris" >> $GITHUB_ENV
-          echo "PREFIX=$(c:\msys64\usr\bin\cygpath -u $idris)" >> $GITHUB_ENV
+          echo "::add-path::$chez"
+          echo "::add-path::$idris\bin"
+          echo "::set-env name=IDRIS_PREFIX::$idris"
+          echo "::set-env name=PREFIX::$(c:\msys64\usr\bin\cygpath -u $idris)"
       - name: Test Scheme
         run: |
           scheme --version
